@@ -1,11 +1,12 @@
 import { getDirectiveValues } from 'graphql';
+import { getFieldDef, getSchemaDirective } from './utils';
 
 interface Deprecation {
     field: string,
     reason: string,
 }
 
-export const deprecatedPlugin = () => {
+export const apolloDeprecatedHighlight = () => {
     return {
         requestDidStart: async (initialRequestContext: any) => {
             const newDeprecations: Deprecation[] = [];
@@ -14,7 +15,7 @@ export const deprecatedPlugin = () => {
                     return {
                         willResolveField({ source, args, contextValue, info }: any) {
                             const fieldDef = getFieldDef(info);
-                            const directive = info.schema.getDirective('deprecated');
+                            const directive = getSchemaDirective(info, 'deprecated');
                             const fieldAstNode = fieldDef.astNode;
                             if (!directive || !fieldAstNode) {
                                 return;
@@ -47,8 +48,3 @@ export const deprecatedPlugin = () => {
         },
     };
 };
-
-function getFieldDef(info: any) {
-    const parentTypeFields = info.parentType.getFields();
-    return parentTypeFields[info.fieldName];
-}
