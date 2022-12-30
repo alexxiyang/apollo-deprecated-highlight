@@ -1,9 +1,9 @@
 {
   "name": "apollo-deprecated-highlight",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Alex <alexxiyang@gmail.com>",
   "description": "Highlight the apollo graphql deprecated fields",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
