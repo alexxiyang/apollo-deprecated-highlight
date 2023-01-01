@@ -1,18 +1,19 @@
 {
   "name": "apollo-deprecated-highlight",
-  "version": "1.1.2",
+  "version": "1.1.8",
   "author": "Alex <alexxiyang@gmail.com>",
   "description": "Highlight the apollo graphql deprecated fields",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
-    "build": "tsc"
+    "build": "tsc",
+    "pub": "jest && tsc && npm publish --access public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexxiyang/apollo-deprecated-highlight.git"
   },
-  "keywords": [],
+  "keywords": ["apollo","graphql"],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/alexxiyang/apollo-deprecated-highlight/issues"

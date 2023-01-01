@@ -1,12 +1,12 @@
 import { getDirectiveValues } from 'graphql';
-import { getFieldDef, getSchemaDirective } from './utils';
+import { getExtensions, getFieldDef, getSchemaDirective } from './utils';
 
 interface Deprecation {
     field: string,
     reason: string,
 }
 
-export const apolloDeprecatedHighlight = () => {
+export const ApolloDeprecatedHighlight = () => {
     return {
         requestDidStart: async (initialRequestContext: any) => {
             const newDeprecations: Deprecation[] = [];
@@ -34,14 +34,11 @@ export const apolloDeprecatedHighlight = () => {
                 },
                 async willSendResponse(requestContext: any) {
                     if (newDeprecations.length > 0) {
-                        if (!requestContext.response.extensions) {
-                            requestContext.response.extensions = {};
+                        const extensions = getExtensions(requestContext);
+                        if (!extensions.deprecations) {
+                            extensions.deprecations = [];
                         }
-                        if (!requestContext.response.extensions.deprecations) {
-                            requestContext.response.extensions.deprecations = [];
-                        }
-                        requestContext.response.extensions.deprecations =
-                            requestContext.response.extensions.deprecations.concat(newDeprecations);
+                        extensions.deprecations = extensions.deprecations.concat(newDeprecations);
                     }
                 },
             };

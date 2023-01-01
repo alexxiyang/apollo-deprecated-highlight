@@ -1,8 +1,8 @@
-import { apolloDeprecatedHighlight } from '../src/index';
+import { ApolloDeprecatedHighlight } from '../src/index';
 jest.mock('graphql');
 import { getDirectiveValues } from 'graphql';
 jest.mock('../src/utils');
-import { getFieldDef, getSchemaDirective } from '../src/utils';
+import { getFieldDef, getSchemaDirective, getExtensions } from '../src/utils';
 
 describe('apolloDeprecatedHighlight', () => {
     beforeEach(() => {
@@ -28,7 +28,14 @@ describe('apolloDeprecatedHighlight', () => {
             };
         });
 
-        const requestDidStart = await apolloDeprecatedHighlight().requestDidStart(null);
+        (getExtensions as any).mockImplementation((requestContext: any) => {
+            requestContext.response = {
+                extensions: {}
+            }
+            return requestContext.response.extensions;
+        });
+
+        const requestDidStart = await ApolloDeprecatedHighlight().requestDidStart(null);
         const executionDidStart = await requestDidStart.executionDidStart(null);
         executionDidStart.willResolveField({
             source: null,

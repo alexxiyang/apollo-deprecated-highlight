@@ -1,8 +1,38 @@
 # apollo-deprecated-highlight
-Highlight the apollo graphql deprecated fields
+Highlight the apollo graphql deprecated fields.
 
-It add `deprecations` to `extensions` of graphql response like this
+We know that even you mark a field in apollo-server as `@deprecated` the client-side won't be able to know it until execute introspection queries. This package is for showing the deprecations in the response so that the engineers can know which fields are deprecated when they are developing.
+
+## How to use
+
 ```
+import { ApolloDeprecatedHighlight } from 'apollo-deprecated-highlight';
+
+// add ApolloDeprecatedHighlight() as plugin
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    plugins: [ApolloDeprecatedHighlight()],
+    ...
+});
+```
+Then it will add `deprecations` to `extensions` of graphql respons. The response format will be
+
+```
+{
+    "data": {...},
+    "extensions": {
+        "deprecations": [
+            <deprecation1>,
+            <deprecation2>,
+            ...
+        ]
+    }
+}
+```
+## Example
+```
+"data": {...},
 "extensions":
     {
         "deprecations":
