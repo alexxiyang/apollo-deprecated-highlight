@@ -30,7 +30,11 @@ describe('apolloDeprecatedHighlight', () => {
 
         (getExtensions as any).mockImplementation((requestContext: any) => {
             requestContext.response = {
-                extensions: {}
+                body: {
+                    singleResult: {
+                        extensions: {}
+                    }
+                }
             }
             return requestContext.response.extensions;
         });
@@ -49,6 +53,6 @@ describe('apolloDeprecatedHighlight', () => {
         const requestContext = { response: {} };
         await requestDidStart.willSendResponse(requestContext);
         
-        expect((requestContext as any).response.extensions.deprecations[0].field).toBe('age');
+        expect((requestContext as any).response.body.singleResult.extensions.deprecations[0].field).toBe('age');
     })
 })

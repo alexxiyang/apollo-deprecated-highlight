@@ -8,29 +8,21 @@ export function getSchemaDirective(info: any, directiveName: string) {
 }
 
 /**
- * Get apollo 3 and apollo 4 response extensions
+ * Get apollo 4 response extensions
  * @param requestContext 
  * @returns 
  */
 export function getExtensions(requestContext: any) {
-    if (requestContext.response.data) {
-        // apollo 3
-        if (!requestContext.response.extensions) {
-            requestContext.response.extensions = {};
+    // apollo 4
+    if (requestContext.response.body.singleResult) {
+        // single
+        if (!requestContext.response.body.singleResult.extensions) {
+            requestContext.response.body.singleResult.extensions = {};
         }
-        return requestContext.response.extensions;
-    } else if (requestContext.response.body){
-        // apollo 4
-        if (requestContext.response.body.singleResult) {
-            // single
-            if (!requestContext.response.body.singleResult.extensions) {
-                requestContext.response.body.singleResult.extensions = {};
-            }
-            return requestContext.response.body.singleResult.extensions;
-        } else if (requestContext.response.body.initialResult) {
-            //incremental
-            // TODO: implement incremental
-            return {};
-        }
+        return requestContext.response.body.singleResult.extensions;
+    } else if (requestContext.response.body.initialResult) {
+        //incremental
+        // TODO: implement incremental
+        return {};
     }
 }
