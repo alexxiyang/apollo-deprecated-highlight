@@ -3,7 +3,7 @@ Highlight the apollo graphql deprecated fields.
 
 We know that even you mark a field in apollo-server as `@deprecated` the client-side won't be able to know it until execute introspection queries. This package is for showing the deprecations in the response so that the engineers can know which fields are deprecated when they are developing.
 
-> **_NOTE:_**  This package is only for [apollo 4](https://www.npmjs.com/package/@apollo/server). If you are using apollo 3 please use [apollo3-deprecated-highlight](https://github.com/alexxiyang/apollo3-deprecated-highlight)
+> **_NOTE:_**  This package is only for [apollo 4](https://www.npmjs.com/package/@apollo/server). If you are using apollo 3 please use [apollo3-deprecated-highlight](https://www.npmjs.com/package/apollo3-deprecated-highlight)
 
 ## How to use
 
