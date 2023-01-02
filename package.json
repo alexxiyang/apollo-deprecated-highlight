@@ -1,6 +1,6 @@
 {
   "name": "apollo-deprecated-highlight",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "author": "Alex <alexxiyang@gmail.com>",
   "description": "Highlight the apollo graphql deprecated fields",
   "main": "lib/index.js",
