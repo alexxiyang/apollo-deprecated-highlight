@@ -24,6 +24,12 @@ export const ApolloDeprecatedHighlight = () => {
                             if (!directiveValue) {
                                 return;
                             }
+                            const isAdded = newDeprecations.some((dep: Deprecation) => {
+                                return dep.field === info.fieldName;
+                            })
+                            if (isAdded) {
+                                return;
+                            }
                             newDeprecations.push({
                                 field: info.fieldName as string,
                                 reason: directiveValue.reason as string,
