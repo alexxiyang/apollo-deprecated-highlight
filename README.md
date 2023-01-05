@@ -1,4 +1,3 @@
-# apollo-deprecated-highlight
 ![apollo deprecated highlight](https://github.com/alexxiyang/apollo-deprecated-highlight/raw/main/adh_logo.png?raw=true)
 
 
