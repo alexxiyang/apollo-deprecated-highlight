@@ -1,5 +1,5 @@
 # apollo-deprecated-highlight
-![apollo deprecated highlight](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![apollo deprecated highlight](https://github.com/alexxiyang/apollo-deprecated-highlight/raw/main/adh_logo.png?raw=true)
 
 
 [![circleci](https://circleci.com/gh/alexxiyang/apollo-deprecated-highlight.svg?style=shield)](https://github.com/alexxiyang/apollo-deprecated-highlight)
