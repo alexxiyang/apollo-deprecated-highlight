@@ -15,6 +15,9 @@ jobs:
 workflows:
   test_my_app:
     jobs:
-      - test:
-        post-steps:
+      - test
+  upload-to-codecov:
+    jobs:
+      - node/test:
+          post-steps:
             - codecov/upload
