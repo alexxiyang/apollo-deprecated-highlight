@@ -12,9 +12,8 @@ jobs:
       - run:
           command: yarn run test
           name: Run YARN tests
+      - codecov/upload
 workflows:
   test_and_upload:
     jobs:
-      - test:
-        post-steps:
-            - codecov/upload
+      - test
