@@ -3,7 +3,7 @@
 
 [![circleci](https://circleci.com/gh/alexxiyang/apollo-deprecated-highlight.svg?style=shield)](https://github.com/alexxiyang/apollo-deprecated-highlight)
 [![codecov](https://codecov.io/gh/alexxiyang/apollo-deprecated-highlight/branch/main/graph/badge.svg?token=C4ABZ0U011)](https://codecov.io/gh/alexxiyang/apollo-deprecated-highlight)
-[![Known Vulnerabilities](https://snyk.io/test/github/alexxiyang/apollo-deprecated-highlight/badge.svg)]
+[![Known Vulnerabilities]](https://snyk.io/test/github/alexxiyang/apollo-deprecated-highlight/badge.svg)
 
 Highlight the apollo graphql deprecated fields.
 
