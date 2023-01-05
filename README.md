@@ -39,20 +39,41 @@ Then it will add `deprecations` to `extensions` of graphql respons. The response
 }
 ```
 ## Example
+
+Here is the [example project](https://github.com/alexxiyang/apollo-deprecated-highlight-demo)
+
+We mark `title`, `author` and `make` as deprecated fields in the schema
 ```
-"data": {...},
-"extensions":
-    {
-        "deprecations":
-        [
-            {
-                "field": "timerange",
-                "reason": "timerange is retired. Please use timerangeInSecond"
-            },
-            {
-                "field": "height",
-                "reason": "height is retired. Please use heightInCM"
-            },
-        ]
-    }
+type Book {
+    title: String @deprecated(reason:"title is deprecated. Dont't use it")
+    author: String @deprecated(reason:"author is deprecated. Dont't use it")
+}
+
+type Car {
+    make: String @deprecated(reason:"make is deprecated. Dont't use it")
+    model: String
+}
+```
+You will see the deprecations in the response
+![response example](https://github.com/alexxiyang/apollo-deprecated-highlight/raw/main/resp_example.png)
+
+Here is the response
+```
+"data": {...}
+"extensions": {
+    "deprecations": [
+      {
+        "field": "title",
+        "reason": "title is deprecated. Dont't use it"
+      },
+      {
+        "field": "author",
+        "reason": "author is deprecated. Dont't use it"
+      },
+      {
+        "field": "make",
+        "reason": "make is deprecated. Dont't use it"
+      }
+    ]
+  }
 ```
