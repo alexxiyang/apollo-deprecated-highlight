@@ -1,4 +1,7 @@
 # apollo-deprecated-highlight
+
+[![<alexxiyang>](https://circleci.com/gh/alexxiyang/apollo-deprecated-highlight.svg?style=svg)](https://github.com/alexxiyang/apollo-deprecated-highlight)
+
 Highlight the apollo graphql deprecated fields.
 
 We know that even you mark a field in apollo-server as `@deprecated` the client-side won't be able to know it until execute introspection queries. This package is for showing the deprecations in the response so that the engineers can know which fields are deprecated when they are developing.
