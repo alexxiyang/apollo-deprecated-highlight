@@ -1,8 +1,9 @@
 version: '2.1'
 orbs:
   node: circleci/node@5.0.3
+  codecov: codecov/codecov@3.2.3
 jobs:
-  test:
+  test_upload:
     executor: node/default
     steps:
       - checkout
@@ -11,7 +12,8 @@ jobs:
       - run:
           command: yarn run test
           name: Run YARN tests
+      - codecov/upload
 workflows:
-  test_my_app:
+  test_and_upload:
     jobs:
-      - test
+      - test_upload
