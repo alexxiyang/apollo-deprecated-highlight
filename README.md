@@ -77,3 +77,7 @@ Here is the response
     ]
   }
 ```
+
+## Friendly browser warnings
+It's better use this package with [apollo-deprecated-highlight-client](https://www.npmjs.com/package/apollo3-deprecated-highlight-client). You can get friendly browser warnings in console like this
+![client example](https://github.com/alexxiyang/apollo-deprecated-highlight/raw/main/client-example.png?raw=true)
