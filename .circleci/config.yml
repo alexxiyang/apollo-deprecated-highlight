@@ -13,11 +13,7 @@ jobs:
           command: yarn run test
           name: Run YARN tests
 workflows:
-  test_my_app:
+  test_and_upload:
     jobs:
       - test
-  upload-to-codecov:
-    jobs:
-      - node/test:
-          post-steps:
-            - codecov/upload
+      - codecov/upload
