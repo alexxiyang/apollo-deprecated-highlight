@@ -3,7 +3,7 @@ orbs:
   node: circleci/node@5.0.3
   codecov: codecov/codecov@3.2.3
 jobs:
-  test:
+  test_upload:
     executor: node/default
     steps:
       - checkout
@@ -16,4 +16,4 @@ jobs:
 workflows:
   test_and_upload:
     jobs:
-      - test
+      - test_upload

@@ -5,7 +5,7 @@
   "description": "Highlight the apollo graphql deprecated fields",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "build": "tsc",
     "prepublish": "tsc"
   },
