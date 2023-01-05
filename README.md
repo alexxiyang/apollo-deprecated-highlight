@@ -1,6 +1,6 @@
 # apollo-deprecated-highlight
 
-[![circleci](https://circleci.com/gh/alexxiyang/apollo-deprecated-highlight.svg?style=svg)](https://github.com/alexxiyang/apollo-deprecated-highlight)
+[![circleci](https://circleci.com/gh/alexxiyang/apollo-deprecated-highlight.svg?style=shield)](https://github.com/alexxiyang/apollo-deprecated-highlight)
 [![codecov](https://codecov.io/gh/alexxiyang/apollo-deprecated-highlight/branch/main/graph/badge.svg?token=C4ABZ0U011)](https://codecov.io/gh/alexxiyang/apollo-deprecated-highlight)
 
 Highlight the apollo graphql deprecated fields.
