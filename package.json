@@ -8,7 +8,7 @@
     "test": "jest --coverage",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
     "build": "tsc",
-    "prepublish": "tsc"
+    "prepublish": "jest --coverage && tsc"
   },
   "repository": {
     "type": "git",
