@@ -27,7 +27,7 @@
     "lib/**/*"
   ],
   "dependencies": {
-    "graphql": "^16.6.0"
+    "graphql": "^16.8.1"
   },
   "devDependencies": {
     "@types/jest": "^29.2.4",
